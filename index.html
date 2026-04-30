@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IKAGAMASS Culture Festival 2026</title>
-    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -13,277 +12,15 @@
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #800000;      /* Royal Maroon */
-            --accent: #FFD700;       /* Gold */
-            --accent-dark: #b8860b;
-            --text-dark: #2d3436;
-            --text-light: #f5f5f5;
-            --glass: rgba(255, 255, 255, 0.95);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        /* Smooth Scrolling */
-        html { scroll-behavior: smooth; }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fffaf0;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--primary);
-            padding: 1.2rem 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover { color: var(--accent); }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1598675551183-1b091d43f99f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW1wZXJhfGVufDB8fDB8fHww');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            margin-bottom: 1rem;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        .btn {
-            padding: 15px 40px;
-            background: var(--accent);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            display: inline-block;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            background: white;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-
-        /* Cultural Section TABS */
-        .container { padding: 100px 10%; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Tab Buttons Styling */
-        .tabs-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 12px 30px;
-            border: 2px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 50px;
-            transition: var(--transition);
-        }
-
-        .tab-btn.active {
-            background: var(--primary);
-            color: var(--accent);
-        }
-
-        .tab-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Tab Content */
-        .tab-panel {
-            display: none;
-            animation: fadeIn 0.6s ease;
-        }
-
-        .tab-panel.active {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            transition: var(--transition);
-            border-bottom: 5px solid transparent;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-bottom: 5px solid var(--accent);
-        }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
-
-        .card i {
-            font-size: 3rem;
-            color: var(--accent-dark);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        /* Map Section */
-        #map-section { background: #f0f0f0; border-radius: 50px 50px 0 0; }
-
-        #map {
-            height: 600px;
-            width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            border: 10px solid white;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .footer-socials { margin-bottom: 20px; }
-        .footer-socials a { color: var(--accent); margin: 0 15px; font-size: 1.5rem; }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav { padding: 1rem 5%; }
-            nav ul { display: none; }
-            .container { padding: 60px 5%; }
-            .section-header h2 { font-size: 2.2rem; }
-        }
-    </style>
+    <!-- Koneksi CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+     <div class="header">
+  <img src="logo.png" alt="Logo IKAGAMA SUMSEL" class="logo">
+  <h1 class="title">IKAGAMASS</h1>
+    </div>
 
-    <nav>
-        <a href="#" class="logo">IKAGAMASS 2026</a>
-        
-    </nav>
 
     <header class="hero">
         <div class="hero-content">
@@ -308,102 +45,102 @@
         <!-- Tab 1: Culinary -->
         <div id="culinary" class="tab-panel active">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1626202340502-990305886973?auto=format&fit=crop&w=400" alt="Pempek">
+                <img src="pempek.jpg" alt="Pempek">
                 <h3>Pempek</h3>
-                <p>The iconic savory fish cake served with 'Cuko', a rich sweet and sour spicy sauce.</p>
+                <p>Olahan ikan bercampur tepung tapioka yang kenyal dan gurih, disajikan dengan kuah cuko asam pedas manis sebagai ikon kuliner Sumatera Selatan</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1512058560366-cd2427ff1101?auto=format&fit=crop&w=400" alt="Tekwan">
-                <h3> Tekwan </h3>
-                <p>A refreshing fish ball soup with mushroom, jicama, and flower lily in a clear shrimp broth.</p>
+                <img src="tempoyak.webp" alt="tempoyak">
+                <h3> Sambal Tempoyak </h3>
+                <p>Fermentasi daging durian yang beraroma tajam dan bercita rasa unik, sering dijadikan bumbu masakan tradisional.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1621348160394-b11861937559?auto=format&fit=crop&w=400" alt="Mie Celor">
+                <img src="sambal bacang.jpg" alt="Sambal Bacang">
                 <h3>Sambal Bacang</h3>
-                <p>Thick yellow noodles served in a rich, creamy shrimp and coconut milk gravy.</p>
+                <p>Berbahan dasar buah bacang yang asam segar, dipadukan dengan cabai dan rempah untuk rasa pedas menyengat.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=400" alt="Pindang Patin">
+                <img src="pindang.jpg" alt="Pindang">
                 <h3>Pindang Maranjat</h3>
-                <p>A spicy and sour catfish soup seasoned with turmeric, tamarind, and fresh pineapple.</p>
+                <p>Masakan berkuah asam pedas berbahan ikan atau daging, dimasak dengan rempah khas Sumatera Selatan yang segar dan menggugah selera</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=400" alt="Kue Maksuba">
+                <img src="maksuba.jpg" alt="Kue Maksuba">
                 <h3>Kue Maksuba</h3>
-                <p>A royal layered cake traditionally served during Eid, made with dozens of duck eggs.</p>
+                <p>Kue tradisional berbahan tepung beras dan gula merah, bertekstur lembut dengan rasa manis legit yang biasa hadir di acara adat</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=400" alt="Martabak HAR">
+                <img src="kelicuk.jpg" alt="Kelicuk">
                 <h3>Kelicuk</h3>
-                <p>Legendary Palembang-style egg martabak served with a flavorful potato curry dip.</p>
+                <p>Makanan tradisional dari tepung beras ketan yang dibentuk memanjang, dimasak dengan santan dan gula sehingga menghasilkan rasa manis gurih.</p>
             </div>
         </div>
 
         <!-- Tab 2: Arts & Heritage -->
         <div id="arts" class="tab-panel">
             <div class="card">
-                <i class="fas fa-scroll"></i>
-                <h3>Songket</h3>
-                <p>The "Queen of Fabrics" - hand-woven silk intricately detailed with gold and silver threads.</p>
+                <img src="songket.jpg" alt="songket">
+                <h3>Kain Songket</h3>
+                <p>Kain tradisional yang ditenun dengan benang emas atau perak, melambangkan kemewahan dan kejayaan budaya Sriwijaya</p>
             </div>
             <div class="card">
-                <i class="fas fa-theater-masks"></i>
+                <img src="dul muluk.jpg" alt="dul muluk">
                 <h3>Dul Muluk</h3>
-                <p>A traditional theater art combining drama, music, and comedy based on local legends.</p>
+                <p>seni teater rakyat yang memadukan drama, musik, dan tari untuk mengisahkan legenda atau cerita kerajaan</p>
             </div>
             <div class="card">
-                <i class="fas fa-female"></i>
-                <h3>Gending Sriwijaya</h3>
-                <p>A majestic welcoming dance that reflects the glory of the ancient Srivijaya Empire.</p>
+                <img src="bebiye.jpg" alt="Bebiye">
+                <h3>Bebiye</h3>
+                <p> istilah bebiye merupakan sebutan lokal untuk Pajak Bumi dan Bangunan (PBB) pada masa lampau di Kabupaten OKI dan OKU</p>
             </div>
             <div class="card">
-                <i class="fas fa-home"></i>
+                <img src = "limas.jpg" alt = "limas">
                 <h3>Rumah Limas</h3>
-                <p>The traditional stilt house of South Sumatra, featuring tiered roofs and elegant wood carvings.</p>
+                <p>Rumah adat berbentuk limas bertingkat yang sarat filosofi dan menunjukkan status sosial pemiliknya</p>
             </div>
             <div class="card">
-                <i class="fas fa-crown"></i>
+                <img src = "tanjak.jpg" alt ="tanjak">
                 <h3>Tanjak</h3>
-                <p>A traditional headgear worn by Palembang nobility, symbolizing honor and authority.</p>
+                <p>Ikat kepala tradisional berbahan dasar songket, yang dipakai sebagai simbol kehormatan dan identitas budaya. </p>
             </div>
             <div class="card">
-                <i class="fas fa-music"></i>
+                <img src = "batanghari.jpg" alt = "batanghari">
                 <h3>Batanghari Sembilan</h3>
-                <p>A soulful musical tradition played on a guitar, depicting the life of river civilizations.</p>
+                <p>Istilah untuk irama musik dengan petikan gitar tunggal yang berkembang di Sumatera Selatan</p>
             </div>
         </div>
 
         <!-- Tab 3: Landmarks -->
         <div id="landmarks" class="tab-panel">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1596438611181-42861c8a14ec?auto=format&fit=crop&w=400" alt="Ampera">
+                <img src="ampera.jpg" alt="Ampera">
                 <h3>Jembatan Ampera</h3>
-                <p>The iconic symbol of Palembang, spanning the Musi River and connecting the city.</p>
+                <p>ikon Palembang yang membentang di atas Sungai Musi.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1598675551183-1b091d43f99f?auto=format&fit=crop&w=400" alt="Mount Dempo">
+                <img src="dempo.jpg" alt="Mount Dempo">
                 <h3>MountGunung Dempo</h3>
-                <p>The highest peak in South Sumatra, surrounded by sprawling, lush tea plantations.</p>
+                <p>Gunung berapi aktif di Pagar Alam dengan panorama perkebunan teh dan udara sejuk yang memikat wisatawan</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1627662232537-814ca83c077d?auto=format&fit=crop&w=400" alt="Kemaro">
+                <img src="kemarau.jpg" alt="Kemaro">
                 <h3>Pulau Kemaro</h3>
-                <p>A legendary island in the Musi River featuring a grand 9-story Chinese Pagoda.</p>
+                <p>Pulau legendaris di Sungai Musi yang terkenal dengan pagoda sembilan lantai dan kisah cinta Tan Bun An</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=400" alt="Danau Ranau">
+                <img src="ranau.jpg" alt="Danau Ranau">
                 <h3>Danau Ranau</h3>
-                <p>The second largest lake in Sumatra, offering breathtaking views and hot springs.</p>
+                <p>Danau terbesar kedua di Sumatera yang dikelilingi pegunungan, menawarkan keindahan alam dan budaya masyarakat sekitar</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1623112217030-22c6e6129853?auto=format&fit=crop&w=400" alt="Museum">
+                <img src="Bukit jempol.png" alt="Museum">
                 <h3>Bukit Jempol</h3>
                 <p> Bukit Jempol di Kabupaten Lahat memiliki bentuk unik menyerupai ibu jari yang menunjuk ke langit.Untuk mencapai puncaknya, pengunjung perlu melakukan trekking ringan. Namun, rasa lelah akan terbayar dengan pemandangan luar biasa berupa hamparan perbukitan hijau yang luas.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400" alt="Coffee">
-                <h3>Pagar Alam Coffee</h3>
-                <p>Explore the high-altitude coffee forests that produce some of Sumatra's finest Robusta.</p>
+                <img src="masjid.webp" alt="masjid">
+                <h3> Masjid Agung</h3>
+                <p>Masjid bersejarah yang memadukan arsitektur Melayu, Cina, dan Eropa, menjadi pusat spiritual dan budaya kota</p>
             </div>
         </div>
     </section>
@@ -422,61 +159,8 @@
         </div>
         <p>"Sumatra Selatan adalah harmoni antara sejarah, alam, dan manusia yang menjadikannya rumah bagi kekayaan budaya Nusantara"</p>
     </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        // TAB LOGIC
-        function openTab(evt, tabName) {
-            let i, tabcontent, tablinks;
-            
-            // Hide all tab panels
-            tabcontent = document.getElementsByClassName("tab-panel");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
-            }
-
-            // Deactivate all buttons
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-
-            // Show current panel and mark button as active
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-
-        // MAP LOGIC
-        const map = L.map('map', {
-            scrollWheelZoom: false
-        }).setView([-3.3, 104.5], 7);
-
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
-
-        const culturalIcon = L.divIcon({
-            className: 'custom-div-icon',
-            html: "<div style='background-color:#800000; width:30px; height:30px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); border:3px solid #FFD700; box-shadow:0 0 10px rgba(0,0,0,0.3)'></div>",
-            iconSize: [30, 30],
-            iconAnchor: [15, 30]
-        });
-
-        const locations = [
-            { name: "Ampera Bridge", coords: [-2.9916, 104.7634], desc: "The architectural soul of Palembang." },
-            { name: "Mount Dempo", coords: [-4.0155, 103.1280], desc: "Pagar Alam's majestic peak." },
-            { name: "Kemaro Island", coords: [-2.9797, 104.8208], desc: "Home to the legendary 9-tier Pagoda." },
-            { name: "Lahat Megaliths", coords: [-3.9031, 103.4981], desc: "Ancient stone carvings." }
-        ];
-
-        locations.forEach(loc => {
-            L.marker(loc.coords, {icon: culturalIcon})
-                .addTo(map)
-                .bindPopup(`<h4 style="color:var(--primary);">${loc.name}</h4><p>${loc.desc}</p>`);
-        });
-
-        map.on('click', () => { if (!map.scrollWheelZoom.enabled()) map.scrollWheelZoom.enable(); });
-    </script>
+    <!--Koneksi JS-->
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
